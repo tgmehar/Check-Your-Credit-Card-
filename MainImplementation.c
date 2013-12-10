@@ -1,0 +1,397 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include"eem303.h"
+int main()
+{
+	FILE *fp;
+	if(fp=fopen("ccnum.txt","a+")==NULL)
+	printf("	FILE NOT CREATED");
+	char name[25];
+	int x=0,len,res,sum;
+	long long int num,numc;
+	int masterb,visamaster,american,express,visa;
+	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q;
+	printf("\n\t\t\t\t CREDIT CARD DETECTOR");
+	printf("\n\n Card Number  :");
+	scanf("%lld",&num);
+	printf("\n\n Name On Card :");
+	scanf("%s",name);
+	len=Longintlength(num);
+	numc=num;
+	if(len!=16 && len!=15 && len!=13) 
+	{
+		printf("\n INVALID CARD NUMBER");
+	    return 0;
+	}
+    else if(len==16)
+	{
+	int	a1,a2,a3,c1,c2,c3,e1,e2,e3,g1,g2,g3,i1,i2,i3,k1,k2,k3,m1,m2,m3,o1,o2,o3;
+	p=numc%10;
+	numc=numc/10;
+	o=numc%10;
+	numc=numc/10;
+	n=numc%10;
+	numc=numc/10;
+	m=numc%10;
+	numc=numc/10;
+	l=numc%10;
+	numc=numc/10;
+	k=numc%10;
+	numc=numc/10;
+	j=numc%10;
+	numc=numc/10;
+	i=numc%10;
+	numc=numc/10;
+	h=numc%10;
+	numc=numc/10;
+	g=numc%10;
+	numc=numc/10;
+    f=numc%10;
+	numc=numc/10;
+	e=numc%10;
+	numc=numc/10;
+	d=numc%10;
+	numc=numc/10;
+	c=numc%10;
+	numc=numc/10;
+	b=numc%10;
+	numc=numc/10;
+	a=numc%10;
+	visamaster=a;
+	masterb=b;
+    a1=a*2;
+	if(a1>=10)
+	{
+		a2=1;
+		a3=a1%10;
+	    a=a2+a3;
+	}
+	else
+		{
+			a=a1; 
+		}
+	c1=c*2;
+	if(c1>=10)
+	{
+		c2=1;
+		c3=c1%10;
+		c=c2+c3;
+	}
+	else
+	{
+		c=c1;
+	}
+	e1=e*2;
+	if(e1>=10)
+	{
+		e2=1;
+		e3=e1%10;
+		e=e2+e3;
+	}
+	else
+	{
+		e=e1;
+	}
+	g1=g*2;
+	if(g1>=10)
+	{
+		g2=1;
+		g3=g1%10;
+		g=g2+g3;
+	}
+	else
+	{
+		g=g1;
+	}
+	i1=i*2;
+	if(i1>=10)
+	{
+		i2=1;
+		i3=i1%10;
+		i=i2+i3;
+	}
+	else
+	{
+		i=i1;
+	}
+	k1=k*2;
+	if(k1>=10)
+	{
+		k2=1;
+		k3=k1%10;
+		k=k2+k3;
+	}
+	else
+	{
+		k=k1;
+	}
+	m1=m*2;
+	if(m1>=10)
+	{
+		m2=1;
+		m3=m1%10;
+		m=m2+m3;
+	}
+	else
+	{
+		m=m1;
+	}
+	o1=o*2;
+	if(o1>=10)
+	{
+		o2=1;
+		o3=o1%10;
+		o=o2+o3;
+	}
+	else
+	{
+		o=o1;
+	}
+	res=a+c+e+g+i+k+m+o;
+	sum=b+d+f+h+j+l+n+p+res;
+	if((sum%10==0)&&(visamaster==4))
+		{
+			printf("\n\n\t\t **VISA**\n");
+			fprintf(fp,"%lld \t %s",num,name);
+		}
+	else if((sum%10==0)&&((visamaster==5)&&(masterb==1||masterb==2||masterb==3||masterb==4||masterb==5)))
+	{
+		printf("\n\n\t\t **MASTER CARD**\n");
+	    fprintf(fp,"%lld \t %s",num,name);
+	}
+	else 
+		printf("  invalid\n");
+	}
+	else if(len==15)
+	{
+		int d1,d2,d3,b1,b2,b3,f1,f2,f3,h1,h2,h3,j1,j2,j3,l1,l2,l3,n1,n2,n3,p1,p2,p3;
+		o=numc%10;
+		numc=numc/10;
+		n=numc%10;
+		numc=numc/10;
+		m=numc%10;
+		numc=numc/10;
+		l=numc%10;
+		numc=numc/10;
+		k=numc%10;
+		numc=numc/10;
+		j=numc%10;
+		numc=numc/10;
+		i=numc%10;
+		numc=numc/10;
+		h=numc%10;
+		numc=numc/10;
+		g=numc%10;
+		numc=numc/10;
+	    f=numc%10;
+		numc=numc/10;
+		e=numc%10;
+		numc=numc/10;
+		d=numc%10;
+		numc=numc/10;
+		c=numc%10;
+		numc=numc/10;
+		b=numc%10;
+		numc=numc/10;
+		a=numc%10;
+		american=a;
+		express=b;
+	    b1=b*2;
+		if(b1>=10)
+		{
+			b2=1;
+			b3=b1%10;
+		    b=b2+b3;
+		}
+		else
+			{
+				b=b1; 
+			}
+			printf("%d\nb",b);
+		d1=d*2;
+		if(d1>=10)
+		{
+			d2=1;
+			d3=d1%10;
+			d=d2+d3;
+		}
+		else
+		{
+			d=d1;
+		}
+		f1=f*2;
+		if(f1>=10)
+		{
+			f2=1;
+			f3=f1%10;
+			f=f2+f3;
+		}
+		else
+		{
+			f=f1;
+		}
+		h1=h*2;
+		if(h1>=10)
+		{
+			h2=1;
+			h3=h1%10;
+			h=h2+h3;
+		}
+		else
+		{
+			h=h1;
+		}
+		j1=j*2;
+		if(j1>=10)
+		{
+			j2=1;
+			j3=j1%10;
+			j=j2+j3;
+		}
+		else
+		{
+			j=j1;
+		}
+		l1=l*2;
+		if(l1>=10)
+		{
+			l2=1;
+			l3=l1%10;
+			l=l2+l3;
+		}
+		else
+		{
+			l=l1;
+		}
+		n1=n*2;
+		if(n1>=10)
+		{
+			n2=1;
+			n3=n1%10;
+			n=n2+n3;
+		}
+		else
+		{
+			n=n1;
+		}
+		res=b+d+f+h+j+l+n;
+		sum=a+c+e+g+i+k+m+o+res;
+		if((sum%10==0)&&((american==3)&&((express==4)||(express==7))))
+		{
+			printf("\n\n\t\t **AMERICAN EXPRESS**\t\n");
+		    fprintf(fp,"%lld \t %s",num,name);
+		}
+		else
+			printf("  invalid!");
+	}
+	else if(len==13)
+	{
+		int d1,d2,d3,b1,b2,b3,f1,f2,f3,h1,h2,h3,j1,j2,j3,l1,l2,l3,n1,n2,n3,p1,p2,p3;
+		m=numc%10;
+		numc=numc/10;
+		l=numc%10;
+		numc=numc/10;
+		k=numc%10;
+		numc=numc/10;
+		j=numc%10;
+		numc=numc/10;
+		i=numc%10;
+		numc=numc/10;
+		h=numc%10;
+		numc=numc/10;
+		g=numc%10;
+		numc=numc/10;
+	    f=numc%10;
+		numc=numc/10;
+		e=numc%10;
+		numc=numc/10;
+		d=numc%10;
+		numc=numc/10;
+		c=numc%10;
+		numc=numc/10;
+		b=numc%10;
+		numc=numc/10;
+		a=numc%10;
+		visa=a;
+	    b1=b*2;
+		if(b1>=10)
+		{
+			b2=1;
+			b3=b1%10;
+		    b=b2+b3;
+		}
+		else
+			{
+				b=b1; 
+			}
+		d1=d*2;
+		if(d1>=10)
+		{
+			d2=1;
+			d3=d1%10;
+			d=d2+d3;
+		}
+		else
+		{
+			d=d1;
+		}
+		f1=f*2;
+		if(f1>=10)
+		{
+			f2=1;
+			f3=f1%10;
+			f=f2+f3;
+		}
+		else
+		{
+			f=f1;
+		}
+		h1=h*2;
+		if(h1>=10)
+		{
+			h2=1;
+			h3=h1%10;
+			h=h2+h3;
+		}
+		else
+		{
+			h=h1;
+		}
+		j1=j*2;
+		if(j1>=10)
+		{
+			j2=1;
+			j3=j1%10;
+			j=j2+j3;
+		}
+		else
+		{
+			j=j1;
+		}
+		l1=l*2;
+		if(l1>=10)
+		{
+			l2=1;
+			l3=l1%10;
+			l=l2+l3;
+		}
+		else
+		{
+			l=l1;
+		}
+		res=b+d+f+h+j+l;
+		sum=a+c+e+g+i+k+m+res;
+		if((sum%10==0)&&(visa==4))
+		{
+			printf("\n\n\t\t **VISA**\n");
+	        fprintf(fp,"%lld \t %s",num,name);
+		}    
+		else
+			printf(" invalid!!");
+	}
+	fclose(fp);
+	return 0;
+	
+		
+}
